@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign up</title>
+  <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+
+
+  <!-- Custom styles for this template -->
+  <link href="../css/SignUp.css" rel="stylesheet">
+</head>
+
+<body class="text-center">
+  <main class="form-signin">
+    <div class="card bg-light">
+      <div class="card-body">
+        <form>
+          <h1 class="h2 mb-3 fw-normal">Create new account</h1>
+
+          <input type="text" id="inputUsername" class="form-control" placeholder="Username" required>
+          <label for="inputPassword" class="visually-hidden">Username</label>
+
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+            <label class="form-check-label" for="inlineRadio1">Female</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+            <label class="form-check-label" for="inlineRadio2">Male</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+            <label class="form-check-label" for="inlineRadio3">Other</label>
+          </div>
+
+          <section>
+            <fieldset>
+              <div class="field moveindate">
+                <label for="MoveInDate">Date of birth</label>
+                <input autocomplete="off" class="text" id="MoveInDate" name="MoveInDate" placeholder="DD-MM-YYYY"
+                  type="date" min="1900-12-17" max="2022-07-01" spellcheck="false" value="2002-08-30">
+              </div>
+            </fieldset>
+          </section>
+
+          <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+          <label for="inputPassword" class="visually-hidden">Password</label>
+          <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+
+          <button class="w-100 btn btn-sm btn-primary" type="submit">Create</button>
+      </div>
+    </div>
+    </form>
+  </main>
+</body>
+
+</html>
