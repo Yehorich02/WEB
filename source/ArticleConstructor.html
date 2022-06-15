@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Discussion</title>
+    <title>Foodie blog</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="../css/Articles.css" rel="stylesheet">
 </head>
 
 <body>
@@ -18,24 +19,28 @@
         <nav class="my-2 my-md-0 me-md-3">
             <a class="btn btn-outline-link text-muted" href="../Home.html">Home</a>
             <a class="btn btn-outline-link text-muted" href="../source/Articles.html">Articles</a>
-            <a class="btn btn-outline-link text-success" href="#">Discussion</a>
+            <a class="btn btn-outline-link  text-muted" href="../source/Discussion.html">Discussion</a>
         </nav>
         <nav class="my-2 my-md-0 me-md-3 Profile">
         </nav>
     </header>
-
     <main class="container">
-        <div class="col-md-20">
-            <div class="row overflow-hidden flex-md-row mb-4 h-md-250 position-relative">
-                <div class="col p-4 d-flex flex-column position-static">
-                    <h1 class="display-3 font-weight-bold">In the process of development <a href="#"></a></h1>
-                    <p class="display-4 font-weight-lighter font-italic"> <strong>We'll let you know as soon as
-                            possible about the new features of our blog...</strong></p>
-                </div>
-            </div>
+        <div class="card bg-light m-4">
+            <form class="m-3">
+                <strong>Select the screen image</strong>
+                <input class="h-25 form-control" type="file" id="formFileMultiple" multiple>
+                <strong>Title</strong>
+                <textarea class="form-control form-control-sm" id="title"></textarea>
+                <strong>Description</strong>
+                <textarea class="form-control" id="short"></textarea>
+                <strong>Article</strong>
+                <textarea class="form-control" id="article"></textarea>
+            </form>
+            <button class="w-25 mb-3 ml-3 btn btn-sm btn-primary" type="submit">Publish</button>
         </div>
     </main>
-    <script src="../js/view/Render.js" type="module"></script>
+    <script src="../js/controller/ArticleConstructorController.js" type="module"></script>
+    <script src="../js/view/ArticleRenderView.js" type="module"></script>
 </body>
 
 </html>
