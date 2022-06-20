@@ -1,0 +1,87 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model List<LB3.Models.Article>
+
+     <link href="../css/Articles.css" rel="stylesheet">
+<div class="album py-5">
+            <div class="container">
+                <div class="row row-cols-1 row-cols-sm-2 g-2">
+                    <div class="col">
+                        <div class="card" style="width: rem;">
+                            <img class="card-img-top" src="../example_img/Meet.jpg" alt="">
+                            <div class="card-body">
+                                <h5 class="card-title">BEEF meat & wine</h5>
+                                <p class="card-text">American marble steaks of the organic farm Creekstone Farms in BEEF
+                                    are cooked on a four-meter outdoor grill  a wood ...</p>
+                            </div>
+                            <div class="card-body">
+                                <a asp-action="Article1" class="card-link">Card link</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card" style="width: rem;">
+                            <img class="card-img-top" src="../example_img/ChineseHi.jpeg" alt="Chinese Hi KFM">
+                            <div class="card-body">
+                                <h5 class="card-title">Chinese Hi KFM</h5>
+                                <p class="card-text">Chinese Hello - a city family Chinese cafe, known not only for
+                                    authentic food but also entertainment ...</p>
+                            </div>
+                            <div class="card-body">
+                                <a href="#" class="card-link">Card link</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card" style="width: rem;">
+                            <img class="card-img-top" src="../example_img/Mushlya.jpeg" alt="Mushlya">
+                            <div class="card-body">
+                                <h5 class="card-title">Mushlya</h5>
+                                <p class="card-text">These are cool seafood bars and restaurants where you can order
+                                    fresh seafood and fish for 1 euro! ...</p>
+                            </div>
+                            <div class="card-body">
+                                <a href="#" class="card-link">Card link</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card" style="width: rem;">
+                            <img class="card-img-top" src="../example_img/ValDeVal.jpg" alt="Val De Val">
+                            <div class="card-body">
+                                <h5 class="card-title">Val de Val</h5>
+                                <p class="card-text">Val de Val is an ice cream made in 2010 according to ancient family
+                                    traditions. All members of the family are involved in the process ...</p>
+                            </div>
+                            <div class="card-body">
+                                <a href="#" class="card-link">Card link</a>
+                            </div>
+                        </div>
+                    </div>
+                      @foreach(var a in Model)
+                        {
+                      <div class="col">
+                           <div class="card shadow-sm">
+                                   @if (a.Image != null)
+                                    {
+                                            <img class="card-img-top" 
+                                                 src="data:image/jpeg;base64,@(Convert.ToBase64String(a.Image))" />
+                                    }
+                                    <div class="card-body">
+                                        <h5 class="card-title">@a.Title</h5>
+                                        <p class="card-text">@a.Text</p>
+                                        <div class="d-flex justify-content-center float-right">
+                                            <div class="btn-group">
+                                                <a type="button" class="btn btn-sm btn-outline-secondary"
+                                                    asp-action="ReadMore" asp-route-id="@a.Id">Card link</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                    </div>
+
+                        }
+                </div>
+            </div>
+        </div>

@@ -1,0 +1,38 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model List<LB3.Models.Article>
+
+    
+  <a class="btn btn-outline-secondary" asp-action="Create">Create New Article</a>
+
+
+  <div class="album py-5">
+            <div class="container">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                   
+                        @foreach(var a in Model)
+                        {
+                             <div class="col">
+                           <div class="card shadow-sm">
+                                   @if (a.Image != null)
+                                    {
+                                            <img class="card-img-top" style="height:250px;"
+                                                 src="data:image/jpeg;base64,@(Convert.ToBase64String(a.Image))" />
+                                    }
+                                    <div class="card-body">
+                                        <h5 class="card-title">@a.Title</h5>
+                                        <p class="card-text" style="height:100px;">@a.Text</p>
+                                        <div class="d-flex justify-content-center float-right">
+                                            <div class="btn-group">
+                                                <a type="button" class="btn btn-sm btn-outline-secondary"
+                                                    asp-action="Edit" asp-route-id="@a.Id">Edit</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                    </div>
+                        }
+                </div>
+            </div>
+        </div>
